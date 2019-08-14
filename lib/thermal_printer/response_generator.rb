@@ -26,7 +26,7 @@ module ThermalPrinter
       index = 0
       label_object.label_formats.each do |label_format|
         wrap_text(
-          label_object.public_send(label_format[:content_method]),
+          label_object.send(label_format[:content_method]),
           max_line: label_format[:max_line] || 1
         ).each do |content|
           hash[index] = Formatter.format(
