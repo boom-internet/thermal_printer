@@ -1,5 +1,6 @@
 require "bundler/setup"
 require "thermal_printer"
+Dir["./spec/example_label_objects/*.rb"].each {|file| puts file; require file }
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
